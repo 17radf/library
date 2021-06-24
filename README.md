@@ -1,0 +1,1 @@
+To restore my knowledge about javascript, I must rewrite my old code or write new clean codes. Didn't touch any javascript stuff for about 5 Months.
