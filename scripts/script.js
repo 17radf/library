@@ -23,8 +23,15 @@ addBookToLibrary()
 console.log(library)
 library[1].ingfo()
 
-const container = document.getElementsByClassName("container")
-container.innerHtml = ""
+const container = document.querySelector(".container")
+const div = document.createElement('div')
+for(let i = 0; i < library.length; i++){
+    const test = document.createElement('p')
+    test.textContent = `${library[i].author}`
+    container.appendChild(test)
+}
+div.classList.add('lol')
+container.appendChild(div)
 console.log(container)
 
 // prototype learning before
