@@ -6,19 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/script.js" defer></script>
-    <title>Library LOL</title>
+    <title>library lol</title>
 </head>
 
 <body>
+    <!-- container of all container -->
     <div class="container">
-        <h1>Books</h1>
-        <div class="containerInput"></div>
-        <input type="text" name="author" id="">
-        <button id="btnSubmit">New Book</button>
+        <h1>Library</h1>
+        <!-- input container -->
+        <div class="containerInput">
+            <input type="text" name="title" id="title" placeholder="Title" maxlength="150">
+            <input type="text" name="author" id="author" placeholder="Author" maxlength="70">
+            <input type="number" name="pages" id="pages" placeholder="pages" max="999">
+            <select name="" id="isRead">
+                <option value="true">Yep</option>
+                <option value="false">Nope</option>
+            </select>
+            <button id="btnSubmit">Submit</button>
+        </div>
     </div>
+    <!-- books container -->
     <div class="containerBooks">
 
-    </div>
     </div>
 </body>
 

@@ -1,51 +1,71 @@
+// initiate empty array for storing books and book constructor
 let library = []
 function Book(title, author, pages, isRead){
     this.title = title
     this.author = author
     this.pages = pages
-    this.isRead = isRead
-    this.ingfo = function() {
-        read = isRead ? "already read" : "not read yet"
-        console.log(`${title} by ${author}, ${pages} pages, ${read}`)
-    }
+    this.isRead = isRead ? "already read" : "not read yet lol"
 }
 
-function addBookToLibrary() {
-    const Hobbits = new Book("The Hobbits", "J.R.R. Tolkien", 295, false)
-    const Raihan = new Book("Raihan", "Raihan lagi", 295, false)
-    const newArray = library.push(Hobbits)
-    const newArray2 = library.push(Raihan)
+// functions for adding books to library and delete
+function addBookToLibrary(title, author, pages, isRead) {
+    const newBook = new Book(title, author, pages, isRead)
+    const newArray = library.push(newBook)
     library.concat(newArray)
-    library.concat(newArray2)
 }
 
-addBookToLibrary()
-console.log(library)
-library[1].ingfo()
+function deleteBook(index) {
+    library.splice(index, 1)
+    display()
+}
 
+// queries selector
 const container = document.querySelector(".container")
 const containerBook = document.querySelector(".containerBooks")
 const btnSub = document.querySelector("#btnSubmit")
 const div = document.createElement('div')
 
+// function for displaying books dom
 function display() {
     containerBook.innerHTML = ""
     for(let i = 0; i < library.length; i++){
-        const test = document.createElement('p')
-        test.textContent = `${library[i].author}`
-        containerBook.appendChild(test)
+        const divider = document.createElement('div')
+        const header = document.createElement('h3')
+        const title = document.createElement('span')
+        const author = document.createElement('span')
+        const pages = document.createElement('span')
+        const isRead = document.createElement('span')
+        const delBtn = document.createElement('button')
+        header.textContent = `Book ${i + 1}`
+        title.textContent = `${library[i].title} `
+        author.textContent = `by ${library[i].author} `
+        pages.textContent = `with ${library[i].pages} pages `
+        isRead.textContent = `and ${library[i].isRead} `
+        delBtn.textContent = `delete`
+        delBtn.addEventListener("click", () => { deleteBook(i) })
+        containerBook.appendChild(divider)
+        divider.appendChild(header)
+        divider.appendChild(title)
+        divider.appendChild(author)
+        divider.appendChild(pages)
+        divider.appendChild(isRead)
+        divider.appendChild(delBtn)
     }
-    return 0;
+    return;
 }
 
-
-div.classList.add('lol')
-container.appendChild(div)
-console.log(btnSub)
+// button for submit
 btnSub.addEventListener("click", () => {
-    addBookToLibrary()
+    const title = document.querySelector("#title").value
+    const author = document.querySelector("#author").value
+    const pages = document.querySelector("#pages").value
+    const isRead = document.querySelector("#isRead").value
+    title && author && pages && isRead ? addBookToLibrary(title, author, JSON.parse(pages), JSON.parse(isRead)) : alert("isi semua dong") 
     display()
 })
+
+// call display function
+display()
 
 // prototype learning before
 
