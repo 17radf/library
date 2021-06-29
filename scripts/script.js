@@ -24,15 +24,28 @@ console.log(library)
 library[1].ingfo()
 
 const container = document.querySelector(".container")
+const containerBook = document.querySelector(".containerBooks")
+const btnSub = document.querySelector("#btnSubmit")
 const div = document.createElement('div')
-for(let i = 0; i < library.length; i++){
-    const test = document.createElement('p')
-    test.textContent = `${library[i].author}`
-    container.appendChild(test)
+
+function display() {
+    containerBook.innerHTML = ""
+    for(let i = 0; i < library.length; i++){
+        const test = document.createElement('p')
+        test.textContent = `${library[i].author}`
+        containerBook.appendChild(test)
+    }
+    return 0;
 }
+
+
 div.classList.add('lol')
 container.appendChild(div)
-console.log(container)
+console.log(btnSub)
+btnSub.addEventListener("click", () => {
+    addBookToLibrary()
+    display()
+})
 
 // prototype learning before
 
