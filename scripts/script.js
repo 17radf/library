@@ -4,7 +4,7 @@ function Book(title, author, pages, isRead){
     this.title = title
     this.author = author
     this.pages = pages
-    this.isRead = isRead ? "already read" : "not read yet lol"
+    this.isRead = isRead 
 }
 
 // functions for adding books to library and delete
@@ -16,6 +16,11 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 function deleteBook(index) {
     library.splice(index, 1)
+    display()
+}
+
+function readBook(index) {
+    library[index].isRead = !library[index].isRead
     display()
 }
 
@@ -36,13 +41,16 @@ function display() {
         const pages = document.createElement('span')
         const isRead = document.createElement('span')
         const delBtn = document.createElement('button')
+        const readBtn = document.createElement('button')
         header.textContent = `Book ${i + 1}`
         title.textContent = `${library[i].title} `
         author.textContent = `by ${library[i].author} `
         pages.textContent = `with ${library[i].pages} pages `
-        isRead.textContent = `and ${library[i].isRead} `
+        isRead.textContent = `and ${library[i].isRead ? "hahaha" : "cool"} `
         delBtn.textContent = `delete`
+        readBtn.textContent = `read?`
         delBtn.addEventListener("click", () => { deleteBook(i) })
+        readBtn.addEventListener("click", () => { readBook(i) })
         containerBook.appendChild(divider)
         divider.appendChild(header)
         divider.appendChild(title)
@@ -50,6 +58,7 @@ function display() {
         divider.appendChild(pages)
         divider.appendChild(isRead)
         divider.appendChild(delBtn)
+        divider.appendChild(readBtn)
     }
     return;
 }
