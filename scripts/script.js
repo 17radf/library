@@ -39,26 +39,26 @@ function display() {
         const title = document.createElement('span')
         const author = document.createElement('span')
         const pages = document.createElement('span')
-        const isRead = document.createElement('span')
         const delBtn = document.createElement('button')
         const readBtn = document.createElement('button')
+
         header.textContent = `Book ${i + 1}`
         title.textContent = `${library[i].title} `
         author.textContent = `by ${library[i].author} `
         pages.textContent = `with ${library[i].pages} pages `
-        isRead.textContent = `and ${library[i].isRead ? "hahaha" : "cool"} `
+        readBtn.textContent = `${library[i].isRead ? "read" : "not read"}`
         delBtn.textContent = `delete`
-        readBtn.textContent = `read?`
+
         delBtn.addEventListener("click", () => { deleteBook(i) })
         readBtn.addEventListener("click", () => { readBook(i) })
+
         containerBook.appendChild(divider)
         divider.appendChild(header)
         divider.appendChild(title)
         divider.appendChild(author)
         divider.appendChild(pages)
-        divider.appendChild(isRead)
-        divider.appendChild(delBtn)
         divider.appendChild(readBtn)
+        divider.appendChild(delBtn)
     }
     return;
 }
