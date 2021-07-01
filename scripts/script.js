@@ -52,6 +52,9 @@ function display() {
         delBtn.addEventListener("click", () => { deleteBook(i) })
         readBtn.addEventListener("click", () => { readBook(i) })
 
+        readBtn.classList.add('btn-book')
+        delBtn.classList.add('btn-book')
+
         containerBook.appendChild(divider)
         divider.appendChild(header)
         divider.appendChild(title)

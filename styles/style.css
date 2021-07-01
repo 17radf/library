@@ -1,5 +1,30 @@
-
+/* parent */
 body{
-    font-family: "Oswald", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: lightgoldenrodyellow;
+    padding: 4rem 12rem 4rem 12rem;
+}
+
+/* input */
+input, select, button, hr{
+    color: gray;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    background: transparent;
+}
+
+input:hover, select:hover, button:hover, hr:hover{
+    border: 2px solid lightblue;
+    border-radius: 4px;
+}
+
+.input-text, .input-number, .input-select, .btn-submit, .btn-book{
+    margin: 0 2px 0 2px;
+    padding: 4px;
+}
+
+.input-number{
+    width: 60px;
+    min-width: 40px;
+    max-width: 2000px;
 }
