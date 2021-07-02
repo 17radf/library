@@ -36,6 +36,7 @@ function display() {
     for(let i = 0; i < library.length; i++){
         const divider = document.createElement('div')
         const header = document.createElement('h3')
+        const text = document.createElement('p')
         const title = document.createElement('span')
         const author = document.createElement('span')
         const pages = document.createElement('span')
@@ -46,23 +47,28 @@ function display() {
         title.textContent = `${library[i].title} `
         author.textContent = `by ${library[i].author} `
         pages.textContent = `with ${library[i].pages} pages `
-        readBtn.textContent = `${library[i].isRead ? "read" : "not read"}`
-        delBtn.textContent = `delete`
+        readBtn.textContent = `${library[i].isRead ? "Read" : "Not read yet"}`
+        delBtn.textContent = `Delete`
 
         delBtn.addEventListener("click", () => { deleteBook(i) })
         readBtn.addEventListener("click", () => { readBook(i) })
 
+        title.classList.add('title-book')
+        author.classList.add('author-book')
+        pages.classList.add('pages-book')
         readBtn.classList.add('btn-book')
         delBtn.classList.add('btn-book')
 
         containerBook.appendChild(divider)
         divider.appendChild(header)
-        divider.appendChild(title)
-        divider.appendChild(author)
-        divider.appendChild(pages)
+        divider.appendChild(text)
+        text.appendChild(title)
+        text.appendChild(author)
+        text.appendChild(pages)
         divider.appendChild(readBtn)
         divider.appendChild(delBtn)
     }
+    localStorage.setItem("library", JSON.stringify(library))
     return;
 }
 
@@ -76,5 +82,12 @@ btnSub.addEventListener("click", () => {
     display()
 })
 
-// call display function
-display()
+// call display 
+if(JSON.parse(localStorage.getItem("library")).length !== 0){
+    library = JSON.parse(localStorage.getItem("library"))
+    display()
+}else{
+    addBookToLibrary("The Adventure Life of Pengamuk Gandi", "Gandi Himself", 69, false)
+    addBookToLibrary("Pesindir Sedjati", "Dian", 420, false)
+    display()
+}
