@@ -83,7 +83,7 @@ btnSub.addEventListener("click", () => {
 })
 
 // call display 
-if(JSON.parse(localStorage.getItem("library")).length !== 0){
+if(localStorage.getItem("library") !== null){
     library = JSON.parse(localStorage.getItem("library"))
     display()
 }else{
