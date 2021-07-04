@@ -53,6 +53,8 @@ function display() {
         delBtn.addEventListener("click", () => { deleteBook(i) })
         readBtn.addEventListener("click", () => { readBook(i) })
 
+        divider.classList.add(`book-seperator`)
+        divider.classList.add(`book-${i}`)
         title.classList.add('title-book')
         author.classList.add('author-book')
         pages.classList.add('pages-book')
@@ -82,12 +84,11 @@ btnSub.addEventListener("click", () => {
     display()
 })
 
-// call display 
+// check if there is localstorage and then call display 
 if(localStorage.getItem("library") !== null){
     library = JSON.parse(localStorage.getItem("library"))
-    display()
 }else{
     addBookToLibrary("The Adventure Life of Pengamuk Gandi", "Gandi Himself", 69, false)
     addBookToLibrary("Pesindir Sedjati", "Dian", 420, false)
-    display()
 }
+    display()

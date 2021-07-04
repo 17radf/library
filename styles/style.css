@@ -5,8 +5,17 @@ body{
     padding: 4rem 12rem 4rem 12rem;
 }
 
+h3{
+    margin: 0;
+}
+
+hr{
+    border: 3px solid lightgray;
+    border-radius: 4px;
+}
+
 /* input */
-input, select, button, hr, option{
+input, select, button, option{
     font-weight: bold;
     color: gray;
     border: 2px solid lightgray;
@@ -14,7 +23,7 @@ input, select, button, hr, option{
     background: transparent;
 }
 
-input:hover, select:hover, button:hover, hr:hover{
+input:hover, select:hover, button:hover{
     border: 2px solid lightblue;
     border-radius: 4px;
 }
@@ -40,6 +49,13 @@ hr{
 }
 
 /* some book style */
+
+.book-seperator{
+    border: 3px solid lightgray;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 12px 0 12px 0;
+}
 
 .title-book{
     font-style: italic;
