@@ -1,81 +1,88 @@
-/* parent */
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: lightgoldenrodyellow;
-    padding: 4rem 12rem 4rem 12rem;
+body,
+html {
+	font-family: "Courier New", Courier, monospace;
+	margin: 0;
+	padding: auto;
 }
 
-h3{
-    margin: 0;
+.header-section {
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: center;
 }
 
-hr{
-    border: 2px solid black;
-    border-radius: 4px;
+.form-section {
+	display: flex;
+	justify-content: center;
+	background-color: salmon;
+	padding: 20px;
 }
 
-/* input */
-input, select, button, option{
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 4px;
-    background: transparent;
+.form {
+	display: flex;
+	padding: 28px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-input:hover, select:hover, button:hover{
-    border: 2px solid black;
-    border-radius: 4px;
+.form .read-form {
+	display: flex;
 }
 
-input:focus, select:focus, button:focus{
-    outline: 0;
-    border: 2px solid gray;
+.books-section {
+	display: flex;
+	flex-direction: column;
+	background-color: khaki;
+	align-items: center;
+	min-height: 100vh;
 }
 
-hr{
-    margin: 25px 0 25px 0;
+.books {
+	display: flex;
+	justify-content: center;
+	max-width: 70em;
+	flex-wrap: wrap;
+	gap: 3em;
 }
 
-.input-text, .input-number, .input-select, .btn-submit, .btn-book{
-    margin: 0 2px 0 2px;
-    padding: 4px;
+.book {
+	background-color: lightslategray;
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 18px;
+	width: 300px;
+	max-height: 200px;
 }
 
-.input-number{
-    width: 60px;
-    min-width: 40px;
-    max-width: 2000px;
+.footer-section {
+	background-color: black;
+	color: white;
+	display: flex;
+	justify-content: center;
 }
 
-/* some book style */
-
-.book-seperator{
-    border: 3px solid black;
-    border-radius: 8px;
-    padding: 12px;
-    margin: 12px 0 12px 0;
+.disable {
+	display: none;
 }
 
-.title-book{
-    font-style: italic;
-    font-weight: 400;
+/* something */
+button,
+input {
+	background-color: antiquewhite;
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 8px;
+	font-weight: bold;
 }
 
-.author-book{
-    font-weight: bolder;
+button:hover {
+	background-color: black;
+	color: white;
 }
 
-/*individual*/
-.red{
-  background-color: #EA4C46;
-}
-
-.green{
-  background-color: #BFE3B4;
-}
-
-@media only screen and (max-width: 600px) {
-    body{
-        padding: 12px;
-    }
+.div-btn {
+	display: flex;
+	gap: 5px;
 }

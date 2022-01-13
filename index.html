@@ -1,37 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./scripts/script.js" defer></script>
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>library lol</title>
+
+    <title>Library</title>
+
+    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="styles/style.css">
+
 </head>
-
 <body>
-    <!-- container of all container -->
-    <div class="container">
-        <h1>My book library</h1>
-        <p>Pure vanilla javascript project using <i>Object Constructor</i> and <i>localStorage</i></p>
-        <!-- input container -->
-        <div class="containerInput">
-            <input type="text" name="title" id="title" placeholder="Title" maxlength="150" class="input-text">
-            <input type="text" name="author" id="author" placeholder="Author" maxlength="70" class="input-text">
-            <input type="number" name="pages" id="pages" placeholder="Pages" max="999" class="input-number">
-            <select name="" id="isRead" class="input-select">
-                <option value="true">Already read</option>
-                <option value="false">Nope, too lazy</option>
-            </select>
-            <button id="btnSubmit" class="btn-submit">Add Book</button>
+
+    <div class="main">
+        <div class="header-section">
+
+            <h1>Dis, a Library</h1>
+
         </div>
-    </div>
-    <hr />
-    <!-- books container -->
-    <div class="containerBooks">
+
+        <div class="main-section">
+
+            <div class="form-section">
+                <div class="form disable">
+
+                    <div>
+                        <h3>Title</h3>
+                        <input type="text" name="title" id="title" placeholder="Title">
+                    </div>
+                    <div>
+                        <h3>Pages</h3>
+                        <input type="number" name="pages" id="pages" placeholder="Pages">
+                    </div>
+                    <div>
+                        <h3>Author</h3>
+                        <input type="text" name="author" id="author" placeholder="Author">
+                    </div>
+                    <div class="read-form">
+                        <h3>Read?</h3>
+                        <input type="checkbox" name="read" id="isRead">
+                    </div>
+                    <div>
+                        <button id="btn-submit">Submit</button>
+                        <button id="btn-back">Back</button>
+                    </div>
+
+                </div>
+
+                <div>
+                    <button id="btn-show">Add new book</button>
+                </div>
+            </div>
+
+            <div class="books-section">
+                <h1>Books</h1>
+                <div class="books"></div>
+            </div>
+
+        </div>
+
+        <div class="footer-section">
+            <h4>Yea, a library</h4>
+        </div>
 
     </div>
+    
 </body>
-
 </html>
