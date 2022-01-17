@@ -2,12 +2,19 @@
 let library = []
 
 // book's object
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
-  this.isRead = () => this.read ? "✅" : "❌"
+class Book {
+
+  constructor(title, author, pages, read){
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
+  }
+
+  isRead(){
+    return this.read ? "✅" : "❌"
+  }
+
 }
 
 Book.prototype.setRead = function() {
