@@ -26,27 +26,32 @@
             <div class="form-section">
                 <div class="form disable">
 
+                  <form>
                     <div>
                         <h3>Title</h3>
-                        <input type="text" name="title" id="title" placeholder="Title">
+                        <input type="text" name="title" id="title" placeholder="Title" required minlength="6" maxlength="18">
                     </div>
+
                     <div>
                         <h3>Pages</h3>
-                        <input type="number" name="pages" id="pages" placeholder="Pages">
+                        <input type="number" name="pages" id="pages" placeholder="Pages" min="1" max="999">
                     </div>
+                    
                     <div>
                         <h3>Author</h3>
                         <input type="text" name="author" id="author" placeholder="Author">
                     </div>
+
                     <div class="read-form">
                         <h3>Read?</h3>
                         <input type="checkbox" name="read" id="isRead">
                     </div>
+
                     <div>
                         <button id="btn-submit">Submit</button>
                         <button id="btn-back">Back</button>
                     </div>
-
+                  </form>
                 </div>
 
                 <div>

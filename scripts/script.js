@@ -79,7 +79,7 @@ submit.addEventListener("click", (e) => {
   const pages = document.querySelector("#pages").value
   const isRead = document.querySelector("#isRead").checked
   console.log(title, pages, author, isRead)
-  title && pages && author ? addBookToLibrary(title, author, pages, isRead) : alert("Yang lengkap dong mz")
+  title && pages && author ? addBookToLibrary(title, author, pages, isRead) : alert("Yang lengkap dong maz")
   display()
 })
 
