@@ -8,7 +8,7 @@
 
     <title>Library</title>
 
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/script.js" type="module" defer></script>
     <link rel="stylesheet" href="styles/style.css">
 
 </head>
@@ -17,7 +17,7 @@
     <div class="main">
         <div class="header-section">
 
-            <h1>Dis, a Library</h1>
+            <h1>Ini, adalah Library</h1>
 
         </div>
 
@@ -60,14 +60,21 @@
             </div>
 
             <div class="books-section">
-                <h1>Books</h1>
-                <div class="books"></div>
+              <div class="search-container">
+                <input type="text" name="search" id="search" placeholder="Title Buku" required minlength="6" maxlength="18">
+                <button id="btn-search">Search!</button>
+              </div>
+                <h1>Sudah dibaca</h1>
+                <div class="books-container books"></div>
+
+                <h1>Belum dibaca</h1>
+                <div class="books-container fbooks"></div>
             </div>
 
         </div>
 
         <div class="footer-section">
-            <h4>Yea, a library</h4>
+            <h4>Iya, library</h4>
         </div>
 
     </div>
